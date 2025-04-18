@@ -197,6 +197,7 @@ nav a:hover::after {
     text-align: center;
     border-radius: 5px;
     color: var(--secondary-background-color);
+    text-decoration: none;
 }
 
 .project-card:nth-child(1):hover,

@@ -21,7 +21,7 @@ function setupHoverListeners() {
 
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            repoName = card.getAttribute('name'); // get the name of the repository from the card
+            repoName = card.firstElementChild.getAttribute('name'); // get the name of the repository from the card
             const repo = repos.find(repo => repo.name === repoName); // find the repository in the repos array
 
             if (repo) {
