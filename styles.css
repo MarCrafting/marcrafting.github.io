@@ -197,6 +197,10 @@ nav a:hover::after {
     text-align: center;
     border-radius: 5px;
     color: var(--secondary-background-color);
+    /* text-decoration: none; */
+}
+
+.projects-container a {
     text-decoration: none;
 }
 
