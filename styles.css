@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-text-color: rgb(126, 180, 182);
+    --secondary-text-color: rgb(197, 197, 197);
+    --main-background-color: rgb(0, 20, 30);
+    --secondary-background-color: rgb(1, 30, 40);
+    --tertiary-background-color: rgb(37, 122, 130);
+    --page-color: rgb(1, 42, 53);
+}
+
+@font-face {
+    font-family: 'CascadiaCode';
+    src: url('fonts/CascadiaCode.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter_24pt-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--page-color);
+    color: var(--main-text-color);
+    padding: 10px;
+    min-width: 600px;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'CascadiaCode', monospace;
+}
+
+#upper-left {
+    width: 55%;
+    min-width: 310px;
+}
+
+#title {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+}
+
+#education p {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+    display: inline-block;
+}
+
+.code {
+    background-color: var(--main-background-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Nav */
+
+nav {
+    width: 40%;
+    min-width: 300px;
+    height: 90px;
+    background-color: var(--main-background-color);
+    border-radius: 10px;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 18px;
+    width: 100%;
+    padding: 30px 0;
+}
+
+nav a:hover::before {
+    content: '{';
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    text-transform: uppercase;
+}
+
+nav a:hover::after {
+    content: '}';
+}
+
+/* Main */
+
+#about,
+#projects,
+#contact {
+    margin: 20px auto 0 auto;
+    border-radius: 20px;
+    width: 90%;
+    min-width: 650px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-background-color);
+}
+
+/* About Me */
+
+#about {
+    display: flex;
+    height: 400px;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.about-text {
+    margin-top: 200px;
+    width: 70%;
+}
+
+.about-text h2 {
+    margin: 0;
+}
+
+.about-text p {
+    margin: 10px 0;
+}
+
+.about-image-container {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(17, 82, 88);
+    border-radius: 50%;
+    margin-top: 120px;
+    border: 2px solid var(--main-text-color);
+}
+
+.about-image {
+    width: 250px;
+    margin: 12.6px 0 0 -20px;
+    /* mix-blend-mode: luminosity; */
+}
+
+/* Projects */
+
+#projects {
+    padding: 2px;
+}
+
+#projects h2,
+#projects p {
+    text-align: center;
+}
+
+#projects h2 {
+    background-color: var(--page-color);
+    width: 215px;
+    height: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text-color);
+}
+
+#projects p {
+    margin-top: -10px;
+}
+
+.projects-container {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.project-card {
+    width: 80%;
+    min-width: 100px;
+    margin: 0 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--secondary-background-color);
+}
+
+.project-card:nth-child(1):hover,
+.project-card:nth-child(2):hover,
+.project-card:nth-child(3):hover {
+    color: white;
+    cursor: pointer;
+}
+
+.project-card:nth-child(1) {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.project-card:nth-child(2) {
+    background-color: var(--tertiary-background-color);
+    opacity: 0.8;
+}
+
+.project-card:nth-child(3) {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/* All Projects */
+
+.repo-name,
+.repo-description {
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.repo-name {
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.repo-description {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+/* Project 1 */
+
+.project1-container {
+    /* background-color: rgba(20, 63, 104, 0.185);
+    border-radius: 20px; */
+}
+
+/* Project 2 */
+
+.project2-container {
+
+}
+
+/* Project 3 */
+
+.project3-container {
+
+}
+
+.terminal {
+    width: 75%;
+    height: 200px;
+    background-color: var(--secondary-background-color);
+    margin: 0 auto 35px auto;
+    border-radius: 15px;
+    font-family: 'CascadiaCode', monospace;
+    font-size: 14px;
+}
+
+.terminal-title {
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;    
+}
+
+.terminal-text {
+    display: inline;
+    padding: 0 15px;
+}
+
+.directory::after {
+    content: '>';
+}
+
+/* cursor animation */
+
+.terminal-cursor {
+    border-right: 2px solid rgb(121, 142, 160);
+    animation: typing 3s steps(30), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 30ch }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Contact */
+
+#contact {
+    height: 400px;
+}
+
+.contact-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#contact h2 {
+    margin-right: 35px;
+    padding-top: 15px;
+    text-align: right;
+}
+
+.socials {
+    width: 120px;
+    height: 120px;
+    background-color: var(--tertiary-background-color);
+    opacity: 0.4;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.socials:nth-child(1) {
+    margin-top: -40px;
+}
+
+.socials:nth-child(2) {
+    margin-top: 40px;
+    border-radius: 50%;
+}
+
+.socials:nth-child(3) {
+    margin-top: 120px;
+    border-radius: 50%;
+}
+
+.socials:nth-child(4) {
+    margin-top: 190px;
+}
+
+.socials a {
+    display: flex;
+}
+
+.socials a img {
+    max-width: 90px;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+}
+
+/* Footer */
+
+footer {
+    width: 90%;
+    height: 50px;
+    /* background-color: rgb(17, 82, 88); */
+    margin: 40px auto 0 auto;
+    padding-left: 22px;
+    font-size: 14px;
+    font-family:'Times New Roman', Times, serif
+}
