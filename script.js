@@ -20,10 +20,11 @@ function setupHoverListeners() {
     const projectCards = document.querySelectorAll('.project-card'); // select all project cards
 
     projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            repoName = card.firstElementChild.getAttribute('name'); // get the name of the repository from the card
-            const repo = repos.find(repo => repo.name === repoName); // find the repository in the repos array
+        repoName = card.firstElementChild.getAttribute('name'); // get the name of the repository from the card
+        const repo = repos.find(repo => repo.name === repoName); // find the repository in the repos array
+        card.setAttribute("href", `${repo.html_url}`)
 
+        card.addEventListener('mouseenter', () => {
             if (repo) {
                 // add typing animation to the terminal
                 typeInTerminal(repoName);
