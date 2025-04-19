@@ -1,7 +1,6 @@
 const username = "MarCrafting"; // GitHub username
 
 let repos = []; // array to store repository data
-let repoName = ""; // variable to store the name of the repository
 let repoImgUrl = ""; // variable to store the image of the repository
 
 const aboutSection = document.getElementById('about'); // select the about section
@@ -20,16 +19,15 @@ function setupHoverListeners() {
     const projectCards = document.querySelectorAll('.project-card'); // select all project cards
 
     projectCards.forEach(card => {
-        repoName = card.firstElementChild.getAttribute('name'); // get the name of the repository from the card
+        let repoName = card.firstElementChild.getAttribute('name'); // get the name of the repository from the card
         const repo = repos.find(repo => repo.name === repoName); // find the repository in the repos array
         card.setAttribute("href", `${repo.html_url}`)
 
         card.addEventListener('mouseenter', () => {
             if (repo) {
                 // add typing animation to the terminal
-                typeInTerminal(repoName);
-                loadImageFromReadme();
-                displayRepo(repo);
+                typeInTerminal(repo.name);
+                loadImageFromReadme(repo);
             }
         })
 
@@ -65,17 +63,32 @@ function clearTerminal() {
 }
 
 async function loadImageFromReadme(repo) {
-    // get the image of the repository
-    fetch(`https://raw.githubusercontent.com/${username}/${repoName}/main/README.md`)
-        .then((response) => response.text()) // parse the response as text
-        .then(markdown => {
-            const regex = /\!\[.*?\]\((.*?)\)/; // regex to match image URLs in the markdown
-            const match = markdown.match(regex);
-            if (match) {
-                repoImgUrl = match[1]; // get the first image URL from the markdown update the background image every second
-            }
-        })
+    try {
+        const readmeApiUrl = `https://api.github.com/repos/${username}/${repo.name}/readme`;
+        const response = await fetch(readmeApiUrl);
+
+        if (!response.ok) throw new Error(`README not found for ${repo.name}`);
+
+        const data = await response.json();
+        const readmeContentUrl = data.download_url; // Direct link to raw README content
+
+        const markdownResponse = await fetch(readmeContentUrl);
+        const markdown = await markdownResponse.text();
+
+        const regex = /!\[.*?\]\((.*?)\)/; // Markdown image pattern
+        const match = markdown.match(regex);
+
+        if (match && match[1]) {
+            repoImgUrl = match[1];
+            displayRepo(repo);
+        } else {
+            console.log(`No image found in README for ${repo.name}`);
+        }
+    } catch (error) {
+        console.error(`Failed to load README for ${repo.name}:`, error);
+    }
 }
+
 
 function displayRepo(repo) {
     setInterval(() => {
