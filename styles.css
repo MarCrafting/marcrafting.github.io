@@ -110,7 +110,6 @@ nav a:hover::after {
 #contact {
     margin: 20px auto 0 auto;
     border-radius: 20px;
-    width: 90%;
     font-family: 'Inter', sans-serif;
     background-color: var(--main-background-color);
 }
@@ -120,7 +119,7 @@ nav a:hover::after {
 #about {
     display: flex;
     height: 400px;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: space-evenly;
     padding: 20px;
     overflow: hidden;
@@ -427,6 +426,7 @@ footer {
         height: 30vw;
         min-width: 95px;
         margin-top: 14.3vh;
+        overflow: hidden;
     }
 
     .about-image {
