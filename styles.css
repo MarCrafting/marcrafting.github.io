@@ -41,7 +41,7 @@ header {
 
 #upper-left {
     width: 55%;
-    min-width: 310px;
+    flex: 1 1 100%;
 }
 
 #title {
@@ -65,11 +65,11 @@ header {
 
 nav {
     width: 40%;
-    min-width: 300px;
     height: 90px;
     background-color: var(--main-background-color);
     border-radius: 10px;
-    margin-right: auto;
+    margin-right: 4vw;
+    flex: 1 1 100%;
 }
 
 nav ul {
@@ -111,7 +111,6 @@ nav a:hover::after {
     margin: 20px auto 0 auto;
     border-radius: 20px;
     width: 90%;
-    min-width: 650px;
     font-family: 'Inter', sans-serif;
     background-color: var(--main-background-color);
 }
@@ -124,10 +123,11 @@ nav a:hover::after {
     margin-top: 20px;
     justify-content: space-evenly;
     padding: 20px;
+    overflow: hidden;
 }
 
 .about-text {
-    margin-top: 200px;
+    margin-top: 13vw;
     width: 70%;
 }
 
@@ -377,7 +377,7 @@ footer {
     font-family:'Times New Roman', Times, serif
 }
 
-/* Phones */
+/* Mobile */
 @media screen and (max-width: 768px) {
     body {
         min-width: 270px;
@@ -410,12 +410,6 @@ footer {
 
     nav ul a{
         font-size: min(1em, 2.2vw);
-    }
-
-    #about,
-    #projects,
-    #contact {
-        min-width: unset;
     }
 
     .about-text {
