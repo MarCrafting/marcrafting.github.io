@@ -140,11 +140,13 @@ nav a:hover::after {
 
 .about-image-container {
     width: 250px;
-    height: 250px;
+    height: auto;
     background-color: rgb(17, 82, 88);
     border-radius: 50%;
     margin-top: 120px;
     border: 2px solid var(--main-text-color);
+    aspect-ratio: 1 / 1;
+    position: relative;
 }
 
 .about-image {
@@ -422,17 +424,19 @@ footer {
     }
 
     .about-image-container {
-        width: 60%;
+        width: 45vw;
+        max-width: 250px;
         height: 30vw;
-        min-width: 95px;
-        margin-top: 14.3vh;
+        max-height: 250px;
         overflow: hidden;
     }
 
     .about-image {
-        max-width: 230px;
         width: 120%;
+        min-width: 110px;
+        max-width: 230px;
         padding-top: 8px;
+        margin: 0 0 0 -15px;
     }
 
     .repo-name {
