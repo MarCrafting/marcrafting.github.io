@@ -29,7 +29,6 @@ body {
     background-color: var(--page-color);
     color: var(--main-text-color);
     padding: 10px;
-    min-width: 600px;
 }
 
 /* Header */
@@ -376,4 +375,136 @@ footer {
     padding-left: 22px;
     font-size: 14px;
     font-family:'Times New Roman', Times, serif
+}
+
+/* Phones */
+@media screen and (max-width: 768px) {
+    body {
+        min-width: 270px;
+    }
+
+    header {
+        justify-content: space-evenly;
+    }
+    
+    #upper-left {
+        min-width: unset;
+    }
+
+    #title {
+        font-size: 15px;
+    }
+
+    #education p {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .code {
+        padding: 2px;
+    }
+    
+    nav {
+        min-width: 130px;;
+    }
+
+    nav ul a{
+        font-size: min(1em, 2.2vw);
+    }
+
+    #about,
+    #projects,
+    #contact {
+        min-width: unset;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+
+    .about-text {
+        margin-top: 40%;  /* change this to prioritize bottom alignment for responsiveness */
+        min-width: 210px;
+        width: 100%;
+    }
+
+    .about-image-container {
+        width: 60%;
+        height: 30vw;
+        min-width: 95px;
+        margin-top: 14.3vh;
+    }
+
+    .about-image {
+        max-width: 230px;
+        width: 120%;
+        padding-top: 8px;
+    }
+
+    .repo-name {
+        font-size: 35px;
+    }
+
+    .repo-description {
+        font-size: 20px;
+    }
+
+    #projects h2 {
+        width: 150px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    #projects > p {
+        font-size: 14px;
+    }
+
+    .projects-container {
+        font-size: min(1em, 2.5vw);
+    }
+
+    .project-card {
+        min-width: 70px;
+    }
+
+    .terminal,
+    .terminal-title {
+        font-size: .65rem;
+    }
+
+    .terminal,
+    .projects-container {
+        width: 90%;
+    }
+
+    #contact h2 {
+        font-size: 1em;
+    }
+
+    .socials {
+        --bg-size: 80px;
+        width: var(--bg-size);
+        height: var(--bg-size);
+        position: absolute;
+    }
+
+    .socials:nth-child(1) {
+        margin: 80px 0 0 -52%;
+    }
+    
+    .socials:nth-child(2) {
+        margin: -20px 0 0 -28%;
+    }
+    
+    .socials:nth-child(3) {
+        margin: 150px 0 0 42%;
+    }
+    
+    .socials:nth-child(4) {
+        margin: 240px 0 0 -2%;
+    }
+
+    .socials a img {
+        max-width: 50px;
+    }
 }
