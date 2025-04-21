@@ -1,4 +1,4 @@
-const username = "MarCrafting"; // GitHub username
+const username = "iMarcraft"; // GitHub username
 
 let repos = []; // array to store repository data
 let repoImgUrl = ""; // variable to store the image of the repository
